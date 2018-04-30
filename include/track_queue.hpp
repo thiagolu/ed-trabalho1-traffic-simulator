@@ -18,9 +18,6 @@ public:
   }
 
   void enqueue(uint64_t number) {
-    printf("%lu\n", 6666666666);
-    printf("%lu\n", 6666666666);
-    printf("%lu\n", 6666666666);
     printf("%lu\n", number);
   }
 };

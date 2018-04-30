@@ -17,7 +17,7 @@
         input_queue = new TrackQueue();
       }
 
-      void enqueue_test(uint64_t number) {
+      void insert_vehicles(uint64_t number) {
         input_queue->enqueue(number);
       }
 
