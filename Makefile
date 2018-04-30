@@ -23,7 +23,7 @@ TESTOBJECTS := $(patsubst %,$(BUILDDIR)/%,$(TESTS:.$(SRCEXT)=.o))
 BINARIES := $(patsubst $(APPDIR)/%,bin/%,$(APPS:.$(SRCEXT)=))
 
 COMPILE := $(CC) $(CFLAGS) $(INC) -c
-MAKEDEPS := @$(COMPILE) -MMD
+MAKEDEPS := $(COMPILE) -MMD
 LINKEDIT := $(CC) $(CFLAGS) $(LIB)
 
 app: $(BINARIES)
