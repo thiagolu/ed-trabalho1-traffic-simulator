@@ -1,4 +1,5 @@
 #include<road/street.hpp>
+#include<structures/array_list.hpp>
 
 #ifndef TRACK_H
 #define TRACK_H
@@ -11,6 +12,7 @@
 class Track {
 private:
   Road::Street *street1;
+  structures::ArrayList<Road::Street> *queue;
 
 public:
 
@@ -19,6 +21,7 @@ public:
 
   Track() {
     street1 = new Road::Street();
+    queue = new structures::ArrayList<Road::Street>();
   }
 
   void add_car(std::size_t number) {
