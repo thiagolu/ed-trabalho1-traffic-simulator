@@ -126,7 +126,7 @@ class ArrayList {
     T pop_back() {
       empty_check();
       --size_;
-      return size_;
+      return contents[size_];
     }
 
     /*!

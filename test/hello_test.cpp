@@ -1,10 +1,10 @@
-#include<catch.hpp>
-#include<hello.hpp>
+#include<vendor/catch.hpp>
+#include<track.hpp>
 
 TEST_CASE( " Example ", "[tag]" ){
 
   SECTION( "it works " ){
-    REQUIRE( Hello::say(5) == 5 );
+    REQUIRE( true );
   }
 
 }

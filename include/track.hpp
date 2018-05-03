@@ -11,8 +11,8 @@
 
 class Track {
 private:
-  Road::Street *street1;
-  structures::ArrayList<Road::Street> *queue;
+  Road::Street *streetA, *streetB, *streetC;
+  structures::ArrayList<Road::Street> *list;
 
 public:
 
@@ -20,16 +20,34 @@ public:
   }
 
   Track() {
-    street1 = new Road::Street();
-    queue = new structures::ArrayList<Road::Street>();
+    streetA = new Road::Street('A');
+    streetB = new Road::Street('B');
+    streetC = new Road::Street('C');
+    list = new structures::ArrayList<Road::Street>();
+
+    connect();
+  }
+
+  void connect() {
+    list->push_front(*streetA);
+    std::cout << "Pushed street 1" << '\n';
+    list->push_front(*streetB);
+    std::cout << "Pushed street 2" << '\n';
+    list->push_front(*streetC);
+    std::cout << "Pushed street 3" << '\n';
   }
 
   void add_car(std::size_t number) {
-    street1->insert_vehicles(number);
+    streetA->insert_vehicles(number);
   }
 
-  bool empty_check() {
-    return street1->empty();
+  void show_output() {
+    Road::Street result = list->pop_front();
+    printf("%c\n", result.get_id());
+    result = list->pop_front();
+    printf("%c\n", result.get_id());
+    result = list->pop_front();
+    printf("%c\n", result.get_id());
   }
 };
 #endif

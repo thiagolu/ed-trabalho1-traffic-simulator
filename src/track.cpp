@@ -11,8 +11,7 @@
 // Run the simulation with params passed
 std::size_t Simulator::run(std::size_t number) {
   Track *tra = new Track();
-  tra->add_car(number);
-  tra->empty_check();
+  tra->show_output();
   return number;
 }
 #endif

@@ -1,6 +1,7 @@
 #include <cstdint>  // std::size_t
 #include<iostream>
 #include <simulator.hpp>
+#include <track.hpp>
 
 
 int main(int argc, char const *argv[]) {
