@@ -1,5 +1,6 @@
 #include<road/street.hpp>
 #include<vehicles/car.hpp>
+#include<traffic_light.hpp>
 
 #ifndef TRACK_H
 #define TRACK_H
@@ -11,7 +12,6 @@
 
 class Track {
 private:
-  Road::Street *streetA, *streetB, *streetC;
   structures::ArrayList<Road::Street> *list;
 
 public:
@@ -20,44 +20,23 @@ public:
   }
 
   Track() {
-    streetA = new Road::Street('A');
-    streetB = new Road::Street('B');
-    streetC = new Road::Street('C');
     list = new structures::ArrayList<Road::Street>();
-
-    connect();
   }
 
-  void connect() {
-    streetA->add_street_as_output(*streetB);
-    streetA->add_street_as_output(*streetC);
-    list->push_front(*streetA);
-    std::cout << "Pushed street 1" << '\n';
-    list->push_front(*streetB);
-    std::cout << "Pushed street 2" << '\n';
-    list->push_front(*streetC);
-    std::cout << "Pushed street 3" << '\n';
-    vehicles::Car *car1 = new vehicles::Car();
-    streetA->insert_vehicles(*car1);
+  void add_street_to_list(Road::Street& street) {
+    list->push_front(street);
   }
 
-  void change_street(Road::Street destination, Road::Street source) {
-    // destination
+  void change_street(Road::Street& source, Road::Street& destination) {
+    vehicles::Car car = source.remove_vehicle();
+    destination.insert_vehicles(car);
   }
 
   void show_output() {
-    // Road::Street result1 = list->pop_front();
-    // Road::Street result2 = list->pop_front();
+    Road::Street street1 = list->pop_front();
     Road::Street result3 = list->pop_back();
-    // std::size_t var1 = result1.remove_vehicle().info;
-    // std::size_t var2 = result2.remove_vehicle().info;
-    // printf("%p\n"  ,result3 );
-    printf("%i\n",result3.remove_vehicle().info );
-    // printf("%i\n",result3.remove_vehicle().info );
-    // int var3 = .name();
-    // printf("%p\n", var1);
-    // printf("%lu\n", var2);
-    // printf("%lu\n", var3);
+    change_street(result3, street1);
+    printf("%i\n",street1.remove_vehicle().info );
   }
 };
 #endif

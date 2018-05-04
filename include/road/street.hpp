@@ -10,11 +10,11 @@ namespace Road {
   class Street {
   private:
     std::size_t track_number;
-    Queue *input_queue;
-    structures::ArrayList<Street> *output_list;
     char id;
 
   public:
+    Queue *input_queue;
+    structures::ArrayList<Street> *output_list;
     Street() {
     }
 
