@@ -1,25 +1,31 @@
 
 #include <cstdint>  // std::size_t
 #include <structures/queue.hpp>
+#include <vehicles/car.hpp>
 #ifndef TRACK_QUEUE_H
 #define TRACK_QUEUE_H
 
 namespace Road {
   class Queue {
   private:
-    structures::ArrayQueue<std::size_t> *queue;
+    structures::ArrayQueue<vehicles::Car> *queue;
 
   public:
     Queue () {
-      queue = new structures::ArrayQueue<std::size_t>();
+      queue = new structures::ArrayQueue<vehicles::Car>();
     }
 
     virtual ~Queue () {
 
     }
 
-    void enqueue(std::size_t number) {
-      queue->enqueue(number);
+    void insert_vehicles(vehicles::Car& car) {
+      queue->enqueue(car);
+    }
+
+    vehicles::Car remove_vehicle() {
+      vehicles::Car &car = queue->dequeue();
+      return car;
     }
 
     bool has_element() {

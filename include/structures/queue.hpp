@@ -38,16 +38,14 @@ class ArrayQueue {
     }
 
     //! Remove from queue
-    T dequeue() {
+    T& dequeue() {
       empty_check();
-      int result;
       int position;
-      result = contents[0];
-
-      size_ = size_ -1;
-      for (position = 0; position <= size_; position++) {
+      T& result = contents[0];
+      for (std::size_t position = 0; position <= size_; position++) {
         contents[position] = contents[position+1];
       }
+      size_ = size_ - 1;
       return result;
     }
 

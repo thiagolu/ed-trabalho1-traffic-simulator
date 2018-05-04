@@ -1,5 +1,5 @@
 CC := g++
-CFLAGS := -std=c++14 -Wall -O3
+CFLAGS := -std=c++14 -Wall -O3 -g
 LIB := -Llib
 DISTFLAGS := -static-libstdc++
 INC := -I include
