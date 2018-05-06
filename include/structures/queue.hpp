@@ -62,7 +62,7 @@ class ArrayQueue {
 
     //! Queue size
     std::size_t size() {
-      return size_ + 1;
+      return size_ + (unsigned)1;
     }
 
     //! Maximum queue size
@@ -72,7 +72,7 @@ class ArrayQueue {
 
     //! Check if is empty
     bool empty() {
-      return size_ == -1;
+      return size_ == (unsigned)-1;
     }
 
     //! Check if queue is full

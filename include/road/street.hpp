@@ -25,11 +25,17 @@ namespace Road {
       this->id = id;
     }
 
-    void insert_vehicles(vehicles::Car& car) {
-      input_queue->insert_vehicles(car);
+    void insert_vehicle(vehicles::Car& car) {
+      printf("%s", "sdaddsad  -- ");
+      printf("%i\n", car.info);
+      input_queue->insert_vehicle(car);
     }
 
     vehicles::Car remove_vehicle() {
+      vehicles::Car car = input_queue->remove_vehicle();
+      printf("%s", "remove  -- ");
+      printf("%i\n", car.info);
+
       return input_queue->remove_vehicle();
     }
 

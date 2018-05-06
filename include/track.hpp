@@ -29,7 +29,8 @@ public:
 
   void change_street(Road::Street& source, Road::Street& destination) {
     vehicles::Car car = source.remove_vehicle();
-    destination.insert_vehicles(car);
+    printf("%p\n", car);
+    destination.insert_vehicle(car);
   }
 
   void show_output() {

@@ -19,18 +19,17 @@ namespace Road {
 
     }
 
-    void insert_vehicles(vehicles::Car& car) {
+    void insert_vehicle(vehicles::Car& car) {
       queue->enqueue(car);
     }
 
     vehicles::Car remove_vehicle() {
-      vehicles::Car &car = queue->dequeue();
+      vehicles::Car car = queue->dequeue();
       return car;
     }
 
     bool has_element() {
-      // printf("%s", queue->empty() ?"true":"false");
-      return queue->empty();
+      return !queue->empty();
     }
   };
 } /* Road */

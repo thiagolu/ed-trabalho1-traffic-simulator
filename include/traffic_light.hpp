@@ -3,6 +3,7 @@
 
 #include <road/street.hpp>
 #include <structures/array_list.hpp>
+#include <vehicles/car.hpp>
 
 class TrafficLight {
 private:
@@ -11,6 +12,16 @@ private:
 
 public:
   TrafficLight (Road::Queue* input, structures::ArrayList<Road::Street>* output) : input(input), output(output) {}
-  virtual ~TrafficLight ();
+
+  virtual ~TrafficLight () {
+  }
+
+  void change_state() {
+    if (input->has_element()) {
+      vehicles::Car car = input->remove_vehicle();
+      Road::Street destination = output->at(0);
+      destination.insert_vehicle(car);
+    }
+  }
 };
 #endif

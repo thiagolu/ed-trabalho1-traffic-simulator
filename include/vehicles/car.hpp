@@ -11,7 +11,8 @@ private:
 
 public:
   int info;
-  Car () : info(44) {}
+  Car (int information) : info(information) {}
+  Car () {}
   virtual ~Car () {
 
   }
