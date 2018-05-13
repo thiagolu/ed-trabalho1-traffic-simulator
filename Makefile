@@ -12,7 +12,7 @@ APPDIR := app
 INCDIR := include
 
 SRCEXT := cpp
-HEADEXT := hpp
+HEADEXT := h
 
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 TESTS := $(shell find $(TESTDIR) -type f -name *.$(SRCEXT))
