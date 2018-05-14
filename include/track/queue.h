@@ -20,7 +20,9 @@ namespace track {
         Queue () {
             queue = new structures::ArrayQueue<vehicles::Car>();
         }
-
+        Queue (int size) {
+            queue = new structures::ArrayQueue<vehicles::Car>(size);
+        }
         virtual ~Queue () {
 
         }
