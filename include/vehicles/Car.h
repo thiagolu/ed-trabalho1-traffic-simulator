@@ -12,19 +12,17 @@
 namespace vehicles {
     class Car {
     private:
-        /* data */
+        int speed;
+        int size;
 
     public:
         int info{};
 
-        explicit Car (int information) : info(information) {}
+        explicit Car (int information) : info(information), speed(10), size(1) {}
         Car () = default;
 
         virtual ~Car () = default;
 
-        int name(/* arguments */) {
-            return 2;
-        }
     };
 } /* vehicles */
 
